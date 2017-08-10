@@ -1,0 +1,25 @@
+<% provide(:title, t("sessions.new.title")) %>
+<h1><%= t"sessions.new.title" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <!-- non–Active Record resource so haven't object as @user -> :session -->
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email, t("sessions.new.email") %>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.label :password, t("sessions.new.password") %>
+      <%= link_to t("sessions.new.forgot"), new_password_reset_path %>
+      <%= f.password_field :password, class: "form-control" %>
+
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span><%= t"sessions.new.remember" %></span>
+      <% end %>
+
+      <%= f.submit t("sessions.new.submit"), class: "btn btn-primary" %>
+    <% end %>
+    <p><%= t"sessions.new.new_user" %><%= link_to t("sessions.new.sign_up"),
+      signup_path %></p>
+  </div>
+</div>

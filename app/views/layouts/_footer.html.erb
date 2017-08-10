@@ -1,0 +1,15 @@
+<!-- the underscore of name is the universal convention for naming partials to
+  identify all the partials in a directory at a glance. -->
+<footer class="footer">
+  <small>
+    <a href="http://www.railstutorial.org/"><%= t"footer.rails_tut" %></a>
+    <%= t"footer.by" %><a href="http://www.michaelhartl.com/">Michael Hartl</a>
+  </small>
+  <nav>
+    <ul>
+      <li><%= link_to t("footer.about"), about_path %></li>
+      <li><%= link_to t("footer.contact"), contact_path %></li>
+      <li><a href="http://news.railstutorial.org/"><%= t"footer.news" %></a></li>
+    </ul>
+  </nav>
+</footer>

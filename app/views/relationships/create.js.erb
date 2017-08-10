@@ -1,0 +1,4 @@
+$("#follow_form").html("<%= escape_javascript(render("users/unfollow")) %>");
+$("#followers").html("<%= @user.followers.count %>");
+// .html updates the HTML inside the relevant element with contents of its argument
+// escape_javascript method to escape out the result when insert HTML in JavaScript

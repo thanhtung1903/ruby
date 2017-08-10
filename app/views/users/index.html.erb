@@ -1,0 +1,9 @@
+<% provide(:title, t("user.index.title")) %>
+<h1>A<%= t"user.index.title" %></h1>
+<!-- method of gem will_paginate need paginate method paginate the users for it active,it automatically looks for an @users, then displays pagination links to access other pages. if users < default 30 will not display pagination-->
+<%= will_paginate %>
+<ul class="users">
+<!-- Rails auto iterates through them and renders each one with the _user.html.erb -->
+  <%= render @users %>
+</ul>
+<%= will_paginate %>

@@ -1,0 +1,15 @@
+<% provide(:title, t("user.edit.title")) %>
+<% provide(:button_text, t("user.edit.save")) %>
+<h1><%= t"user.edit.title" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <!-- @user.new_record? to rails know to use a post or patch (post + a hidden
+    input field) -->
+    <%= render "form", url: {url: user_path} %>
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <a href="http://gravatar.com/emails" target="_blank">
+        <%= t"user.edit.change" %></a>
+    </div>
+  </div>
+</div>

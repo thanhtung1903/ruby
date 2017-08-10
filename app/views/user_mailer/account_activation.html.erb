@@ -1,0 +1,8 @@
+<h1><%= t "user_mailer.acc_activation.title" %></h1>
+
+<p><%= t "user_mailer.acc_activation.hi" %><%= @user.name %>,</p>
+
+<p><%= t "user_mailer.acc_activation.welcome" %></p>
+<!-- the different of _url and _path is _url return full url -->
+<%= link_to t("user_mailer.acc_activation.activate"),
+  edit_account_activation_url(@user.activation_token, email: @user.email) %>

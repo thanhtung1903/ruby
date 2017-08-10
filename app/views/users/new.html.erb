@@ -1,0 +1,11 @@
+<% provide(:title, t("user.new.title")) %>
+<% provide(:button_text, t("user.new.create")) %>
+<h1><%= t"user.new.title" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <!-- @user is new object of User class => action /user , method post and
+    create 1 user hash include list of key wihch are arguments of input element,
+    these arguments are attributes of User class -->
+    <%= render "form", url: {url: signup_path} %>
+  </div>
+</div>

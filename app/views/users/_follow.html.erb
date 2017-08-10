@@ -1,0 +1,6 @@
+<!-- Returns a new Relationship object with follower_id = user's id
+  remote: true tells Rails to allow the form to be handled by JavaScript.-->
+<%= form_for(current_user.active_relationships.build, remote: true) do |f| %>
+  <div><%= hidden_field_tag :followed_id, @user.id %></div>
+  <%= f.submit t("user.follow.follow"), class: "btn btn-primary" %>
+<% end %>

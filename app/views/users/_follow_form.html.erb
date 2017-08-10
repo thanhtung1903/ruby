@@ -1,0 +1,11 @@
+<!-- when access another user's profile @so @user = other user = use of show
+  action, current_user is loged in, so it is defferrent that block will excuse -->
+<% unless current_user? @user %>
+  <div id="follow_form">
+  <% if current_user.following? @user %>
+    <%= render "unfollow" %>
+  <% else %>
+    <%= render "follow" %>
+  <% end %>
+  </div>
+<% end %>

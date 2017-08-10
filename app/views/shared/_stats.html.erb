@@ -1,0 +1,16 @@
+<!-- @user is not nil on a profile page, but it is not nil on the Home page -->
+<% @user ||= current_user %>
+<div class="stats">
+  <a href="<%= following_user_path(@user) %>">
+    <strong id="following" class="stat">
+      <%= @user.following.count %>
+    </strong>
+    <%= t "shared.stats.following" %>
+  </a>
+  <a href="<%= followers_user_path(@user) %>">
+    <strong id="followers" class="stat">
+      <%= @user.followers.count %>
+    </strong>
+    <%= t "shared.stats.followers" %>
+  </a>
+</div>

@@ -1,0 +1,19 @@
+<!-- with each element of @microposts as micropost -->
+<li id="micropost-<%= micropost.id %>"> <!-- each micropost using a CSS id -->
+  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
+  <!--  micropost.user return a object user -> users_path(user) -->
+  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+  <span class="content"><%= micropost.content %></span>
+  <!-- picture? is created auto by CarrierWave based on name of image attribute
+    picture.url returen url to image -->
+  <%= image_tag micropost.picture.url if micropost.picture? %>
+  <span class="timestamp">
+    <%= t "micropost.micropost.posted" %>
+    <%= time_ago_in_words micropost.created_at %>
+    <%= t "micropost.micropost.ago" %>
+    <% if current_user? micropost.user %>
+      <%= link_to t("micropost.micropost.delete"), micropost, method: :delete,
+        data: {confirm: t("micropost.micropost.sure")} %>
+    <% end %>
+  </span>
+</li>
